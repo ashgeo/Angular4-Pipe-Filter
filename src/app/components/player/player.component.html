@@ -1,0 +1,29 @@
+<label>Fileter by name</label>
+<input type="text" name ="term" [(ngModel)]= "term"/>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>position</th>
+      <th>No</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let player of players |filterPipe:term">
+      <td>{{player.name}}</td>
+      <td>{{player.position}}</td>
+      <td>{{player.number}}</td>
+    </tr>
+  </tbody>
+</table>
+<hr>
+<div>
+<h3>Sort by number 14</h3>
+<div *ngFor = "let playerPos of players |sort:'14'">
+  <li>{{playerPos.name }} </li>
+</div>
+<h3>Sort by number 57</h3>
+<div *ngFor = "let playerPos of players |sort:'57'">
+  <li>{{playerPos.name }} </li>
+</div>
+</div>
